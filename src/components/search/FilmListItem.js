@@ -2,15 +2,18 @@
 
 import { Text } from "native-base";
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { getImageFromApi } from "../../api/TMBDapi";
 
 
 export function FilmListItem(props) {
     const movie = props.movie;
+    const displayDetailForFilm = props.displayDetailForFilm;
 
     return (
-        <View style={styles.main_container}>
+        <TouchableOpacity
+            style={styles.main_container}
+            onPress={() => displayDetailForFilm(movie.id)}>
             <Image
             style={styles.image}
             source={{uri: getImageFromApi(movie.poster_path)}}
@@ -27,7 +30,7 @@ export function FilmListItem(props) {
                 <Text style={styles.date_text}>{movie.release_date}</Text>
             </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

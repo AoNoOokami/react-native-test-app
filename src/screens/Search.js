@@ -25,7 +25,8 @@ export function Search(props) {
     }
 
     const _displayDetailForFilm = (id) => {
-        console.log("Display film with id " + id)
+        console.log("Display film with id " + id);
+        props.navigation.navigate('Detail', {id: id});
     }
 
     if (isLoading) {
@@ -50,7 +51,7 @@ export function Search(props) {
                         <FlatList
                             data={movies}
                             keyExtractor={(item) => item.id.toString()}
-                            renderItem={({item}) => <FilmListItem movie={item}/>}
+                            renderItem={({item}) => <FilmListItem movie={item} displayDetailForFilm={_displayDetailForFilm}/>}
                         />
                 </Content>
             </Container>
