@@ -6,6 +6,8 @@ import { Alert } from 'react-native';
 import 'react-native-gesture-handler';
 import HomeScreen from './src/screens/Home';
 import ImagePicker from './src/screens/ImagePicker';
+import MovieDetail from './src/screens/MovieDetail';
+import { Search } from './src/screens/Search';
 import { SimpleForm } from './src/screens/SimpleForm';
 
 export default function App() {
@@ -40,6 +42,8 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ImagePicker" component={ImagePicker} />
         <Stack.Screen name="SimpleForm" component={SimpleForm} />
+        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Detail" component={MovieDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -38,6 +38,15 @@ export default function HomeScreen(props) {
           >
             <Text>Simple form</Text>
           </Button>
+          <Button
+            full
+            block
+            dark
+            style={{ marginTop: 10 }}
+            onPress={() => props.navigation.navigate("Search")}
+          >
+            <Text>Search</Text>
+          </Button>
         </Content>
       </Container>
     );
